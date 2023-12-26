@@ -1,3 +1,39 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+}
+
 header {
-    color: red;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+}
+
+nav.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-container ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.navbar-container ul li {
+    margin: 10px;
+    padding: 0px;
+}
+
+.navbar-container a {
+    color: white;
+    text-decoration: none;
 }
