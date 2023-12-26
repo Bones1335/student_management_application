@@ -22,3 +22,9 @@ def show_students():
     connection = get_db_connection()
     students = connection.execute("SELECT * FROM students").fetchall()
     return render_template('students.html', students=students)
+
+@app.route("/internships")
+def show_internships():
+    connection = get_db_connection()
+    internships = connection.execute("SELECT * FROM internships").fetchall()
+    return render_template('internships.html', internships=internships)

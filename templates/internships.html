@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% block body %}
+<table>
+    <thead>
+        <tr>
+            <th>Code Unique</th>
+            <th>Nom du cabinet</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for internship in internships %}
+            <tr>
+                <td>{{ internship.internship_ID }}</td>
+                <td>{{ internship.business_name }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
