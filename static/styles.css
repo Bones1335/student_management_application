@@ -41,19 +41,19 @@ nav.navbar-container {
 
 .content-container {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 table {
-    display: grid;
+    border-collapse: collapse;
+    grid-column: 2 / 3;
     justify-content: center;
 }
 
-thead {
-    
-}
-
-tbody {
-    
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
 }
 
 footer {
