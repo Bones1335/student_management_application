@@ -4,6 +4,7 @@ html {
 }
 
 body {
+    display: grid;
     margin: 0px;
     padding: 0px;
     min-height: 100vh;
@@ -36,4 +37,29 @@ nav.navbar-container {
 .navbar-container a {
     color: white;
     text-decoration: none;
+}
+
+.content-container {
+    display: grid;
+}
+
+table {
+    display: grid;
+    justify-content: center;
+}
+
+thead {
+    
+}
+
+tbody {
+    
+}
+
+footer {
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }
