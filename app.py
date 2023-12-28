@@ -28,3 +28,9 @@ def show_internships():
     connection = get_db_connection()
     internships = connection.execute("SELECT * FROM internships").fetchall()
     return render_template('internships.html', internships=internships)
+
+@app.route("/create_new_student")
+def create_new_student():
+    connection = get_db_connection()
+    internships = connection.execute("SELECT * FROM students").fetchall()
+    return render_template('create_new_student.html', internships=internships)

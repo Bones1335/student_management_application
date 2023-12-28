@@ -39,6 +39,11 @@ nav.navbar-container {
     text-decoration: none;
 }
 
+form.new_student {
+    grid-column: 2 / 3;
+    justify-self: center;
+}
+
 .content-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
