@@ -1,13 +1,14 @@
 {% extends "index.html" %}
 
 {% block body %}
-<form class="new_student" action="">
-    <label for="nom">NOM:</label><br>
-    <input id="nom" placeholder="NOM" type="text"><br>
+<form class="new_student" action="/enroll" method="post">
+    <label for="last_name">NOM:</label><br>
+    <input id="last_name" name="last_name" placeholder="NOM" type="text"><br>
 
-    <label for="prénom">Prénom:</label><br>
-    <input id="prénom" placeholder="Prénom" type="text"><br>
+    <label for="first_name">Prénom:</label><br>
+    <input id="first_name" name="first_name" placeholder="Prénom" type="text"><br>
 
+    <!-- Not part of MVP
     <label for="adresse">adresse postale:</label><br>
     <input id="adresse" placeholder="adresse" type="text"><br>
 
@@ -22,6 +23,7 @@
 
     <label for="email">adresse mail:</label><br>
     <input id="email" placeholder="adresse mail" type="email"><br>
+    -->
 
     <label for="submit"></label>
     <input id="submit" type="submit" value="Submit">
