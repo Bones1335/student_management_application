@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<table>
+    <thead>
+        <tr>
+            <th>Numéro étudiant</th>
+            <th>NOM</th>
+            <th>Prénom</th>
+            <th>Stage</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>{{ student.student_ID }}</td>
+                <td><input id="last_name" name="last_name" value="{{ student.last_name }}" type="text"></td>
+                <td><input id="first_name" name="first_name" value="{{ student.first_name }}" type="text"></td>
+                <td><input id="internship_choice" name="internship_choice" value="{{ student.internship_choice }}" type="number"></td>
+                <td class="save_button">
+                    <form action="/update" method="post">
+                        <input name="id" type="hidden" value="{{ student.student_ID }}">
+                        <button name="save" type="submit">SAVE</button>
+                    </form>
+                </td>
+            </tr>
+    </tbody>
+</table>
+
+{% endblock %}

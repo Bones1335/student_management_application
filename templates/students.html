@@ -19,6 +19,7 @@
                 <td>{{ student.internship_choice }}</td>
                 <td class="edit_button">
                     <form action="/edit" method="post">
+                        <input name="id" type="hidden" value="{{ student.student_ID }}">
                         <button name="edit" type="submit">Editer</button>
                     </form>
                 </td>

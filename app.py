@@ -36,4 +36,16 @@ def enroll_student():
     connection.commit()
 
     return redirect('/students')
+
+@app.route("/edit", methods=["GET", "POST"])
+def edit_student():
+    id = request.form.get("id")
+    student = connection.execute("SELECT * FROM students WHERE student_ID = ?", (id,)).fetchone()
+
+    return render_template("edit_form.html", student=student) 
+
+@app.route("/update", methods=["POST"])
+def update_student_info():
     
+    # connection.execute("UPDATE students SET last_name = ?, first_name = ?, internship_choice = ? WHERE student_id = ?")
+    return redirect('/students')
