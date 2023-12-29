@@ -1,14 +1,11 @@
-import sqlite3
 from flask import Flask, redirect, render_template, request
+from modules import db_connection
 from modules import random_student_id as gen_id
 
 app = Flask(__name__)
 
+connection = db_connection.get_db_connection()
 
-def get_db_connection():
-    connection = sqlite3.connect("students.db", check_same_thread=False)
-    connection.row_factory = sqlite3.Row
-    return connection
 
 @app.route("/")
 def home():
@@ -16,13 +13,11 @@ def home():
 
 @app.route("/students", methods=["GET", "POST"])
 def show_students():
-    connection = get_db_connection()
     students = connection.execute("SELECT * FROM students").fetchall()
     return render_template('students.html', students=students)
 
 @app.route("/internships", methods=["GET", "POST"])
 def show_internships():
-    connection = get_db_connection()
     internships = connection.execute("SELECT * FROM internships").fetchall()
     return render_template('internships.html', internships=internships)
 
@@ -32,8 +27,6 @@ def create_new_student():
 
 @app.route("/enroll", methods=["POST"])
 def enroll_student():
-    connection = get_db_connection()
-
     student_ID = gen_id.n_len_rand(7)
     last_name = request.form.get("last_name")
     first_name = request.form.get("first_name")
