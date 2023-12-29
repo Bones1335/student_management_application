@@ -23,6 +23,13 @@
                         <button class="save_button" name="internship_choice" type="submit">SAVE</button>
                     </form>
                 </td>
+
+                <td class="delete_button">
+                    <form action="/delete" method="post">
+                        <input name="id" type="hidden" value="{{ student.student_ID }}">
+                        <button class="delete_button" name="delete" type="submit">DELETE</button>
+                    </form>
+                </td>
             </tr>
     </tbody>
 </table>
