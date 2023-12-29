@@ -61,6 +61,10 @@ th, td {
     text-align: left;
 }
 
+td.edit_button {
+    border: None;
+}
+
 footer {
     background-color: red;
     color: white;
