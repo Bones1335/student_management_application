@@ -61,8 +61,20 @@ th, td {
     text-align: left;
 }
 
-td.edit_button {
+td.edit_button,
+td.delete_button {
     border: None;
+}
+
+button.save_button {
+    background-color: green;
+    color: white;
+    
+}
+
+button.delete_button {
+    background-color: darkred;
+    color: white;
 }
 
 footer {

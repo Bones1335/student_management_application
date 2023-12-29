@@ -44,8 +44,15 @@ def edit_student():
 
     return render_template("edit_form.html", student=student) 
 
-@app.route("/update", methods=["POST"])
+@app.route("/update", methods=["GET", "POST"])
 def update_student_info():
-    
-    # connection.execute("UPDATE students SET last_name = ?, first_name = ?, internship_choice = ? WHERE student_id = ?")
+    student_ID = request.form.get("id")
+    internship_choice = request.form.get("internship_choice")
+
+    print(student_ID)
+    print(internship_choice)
+
+    connection.execute("UPDATE students SET internship_choice = ? WHERE student_id = ?", (internship_choice, student_ID))
+    connection.commit()
+
     return redirect('/students')
