@@ -20,6 +20,12 @@
             <tr>
                 <td>{{ internship.internship_ID }}</td>
                 <td>{{ internship.business_name }}</td>
+                <td class="edit_button">
+                    <form action="/edit_internship" method="post">
+                        <input name="id" type="hidden" value="{{ internship.internship_ID }}">
+                        <button name="edit" type="submit">Editer</button>
+                    </form>
+                </td>
             </tr>
         {% endfor %}
     </tbody>

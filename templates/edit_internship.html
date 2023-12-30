@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<table>
+    <thead>
+        <tr>
+            <th>Code Unique</th>
+            <th>Nom du cabinet</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>{{ internship.internship_ID }}</td>
+                <td>
+                    <form action="/update_internship" method="post">
+                        <input name="id" type="hidden" value="{{ internship.internship_ID }}">
+                        <input name="location" value="{{ internship.business_name }}" type="text">
+                        <button class="save_button" name="location" type="submit">SAVE</button>
+                    </form>
+                </td>
+
+                <td class="delete_button">
+                    <form action="/delete_internship" method="post">
+                        <input name="id" type="hidden" value="{{ internship.internship_ID }}">
+                        <button class="delete_button" name="delete" type="submit">DELETE</button>
+                    </form>
+                </td>
+            </tr>
+    </tbody>
+</table>
+
+{% endblock %}
