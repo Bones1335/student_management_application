@@ -56,3 +56,10 @@ def update_student_info():
     connection.commit()
 
     return redirect('/students')
+
+@app.route("/delete", methods=["POST"])
+def delete_student():
+    student_ID = request.form.get("id")
+
+    connection.execute("DELETE FROM students WHERE student_ID = ?", (student_ID,))
+    return redirect("/students")
