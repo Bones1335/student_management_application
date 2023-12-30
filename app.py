@@ -42,7 +42,7 @@ def edit_student():
     id = request.form.get("id")
     student = connection.execute("SELECT * FROM students WHERE student_ID = ?", (id,)).fetchone()
 
-    return render_template("edit_form.html", student=student) 
+    return render_template("edit_student.html", student=student) 
 
 @app.route("/update", methods=["GET", "POST"])
 def update_student_info():
