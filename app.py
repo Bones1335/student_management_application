@@ -63,3 +63,12 @@ def delete_student():
 
     connection.execute("DELETE FROM students WHERE student_ID = ?", (student_ID,))
     return redirect("/students")
+
+@app.route("/create_new_internship", methods=["POST"])
+def create_new_internship():
+    location = request.form.get("location")
+
+    connection.execute("INSERT INTO internships (business_name) VALUES(?)", (location,))
+    connection.commit()
+
+    return redirect("/internships")
