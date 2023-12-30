@@ -49,6 +49,10 @@ form.new_student {
     grid-template-columns: repeat(3, 1fr);
 }
 
+.create_internship_field {
+    grid-column: 2 / 3;
+} 
+
 table {
     border-collapse: collapse;
     grid-column: 2 / 3;

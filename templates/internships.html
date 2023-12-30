@@ -1,6 +1,13 @@
 {% extends "index.html" %}
 
 {% block body %}
+
+<form class="create_internship_field" action="/create_new_internship" method="post">
+    <label for="location">Nom du cabinet:</label>
+    <input name="location" placeholder="Cabinet" type="text">
+    <button type="submit">Créer</button>
+</form>
+
 <table>
     <thead>
         <tr>
