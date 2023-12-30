@@ -86,3 +86,10 @@ def update_internship_information():
     connection.commit()
 
     return redirect("/internships")
+
+@app.route("/delete_internship", methods=["POST"])
+def delete_internship():
+    internship_ID = request.form.get("id")
+
+    connection.execute("DELETE FROM internships WHERE internship_ID = ?", (internship_ID,))
+    return redirect("/internships")
