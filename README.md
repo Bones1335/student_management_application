@@ -15,3 +15,15 @@
 - READ full list of internships with their unique codes displayed from the internships table of the students.db SQLite database.
 - UPDATE a business' name with the 'Edit' button.
 - DELETE all records of an existing business. Note that doing so will create numerical holes in the list of internship locations due to each unique code and the autoincrement feature of the database.
+
+## Set-up
+
+- Clone the repository with `git clone` and run the following code in your terminal to test the application in a virtual environment for Python:
+
+```
+python -m venv venv
+pip install -r requirements.txt
+flask run
+```
+
+- Once in the app, you should be able to add, view, update, and remove students and internships.
