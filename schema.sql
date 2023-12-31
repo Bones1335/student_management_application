@@ -1,3 +1,2 @@
-CREATE TABLE internships (internship_ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, business_name TEXT NOT NULL);
-CREATE TABLE sqlite_sequence(name,seq);
-CREATE TABLE students (student_ID INTEGER PRIMARY KEY UNIQUE NOT NULL, last_name TEXT NOT NULL, first_name TEXT NOT NULL, internship_choice NUMERIC REFERENCES internship (internship_ID));
+CREATE TABLE IF NOT EXISTS internships (internship_ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, business_name TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS students (student_ID INTEGER PRIMARY KEY UNIQUE NOT NULL, last_name TEXT NOT NULL, first_name TEXT NOT NULL, internship_choice NUMERIC REFERENCES internship (internship_ID));

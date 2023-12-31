@@ -4,7 +4,7 @@ from modules import random_student_id as gen_id
 
 app = Flask(__name__)
 
-connection = db_connection.get_db_connection()
+connection = db_connection.get_db_connection(app)
 
 
 @app.route("/")
